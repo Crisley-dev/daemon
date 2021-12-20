@@ -1,8 +1,10 @@
 jQuery(function(){
 jQuery('.bio,.pericias,.combate,.equipamentos,.magia,.aprimoramentos').hide();
 // Manipulação de ficha
-jQuery('label').on('click',function(){
-    let item = jQuery(this).text();
+
+jQuery('label,a').on('click',function(){
+    let item = jQuery.trim(jQuery(this).text());
+    console.log(jQuery.trim(item))
     switch (item) {
         case 'Biografia':
             jQuery('.atrib_info,.pericias,.combate,.equipamentos,.magia,.aprimoramentos').hide();
@@ -123,6 +125,12 @@ jQuery("#btn-sub-apri").click(function(){
 
 })
 
+
+	/*Menu-toggle*/
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
 
 
 
