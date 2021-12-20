@@ -6,9 +6,9 @@ require_once "manage.php";
 
 ?>
 
-<!-- IMPÓRTS -->
+<!-- IMPORTS -->
 
-
+<head>
 <link rel="stylesheet" href="style.css">
 
 <script src="https://kit.fontawesome.com/c2d6a5c364.js" crossorigin="anonymous"></script>
@@ -20,12 +20,16 @@ require_once "manage.php";
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>
 
-<script src="function.js"></script>
 
+<script type = "text/javascript" src="function.js"></script>
+</head>
 
 <title>Ficha</title>
 
-<!-- ANCHOR ABA INFO & ATRIBUTOS -->
+<body>
+        
+
+<!-- ABA INFO & ATRIBUTOS -->
 
 <div class="card corpo">
    
@@ -66,6 +70,9 @@ require_once "manage.php";
                 <form id="form_daemon" name="form_daemon" method="POST">
                         <input type="hidden" name="player" value="<?php echo ($player); ?>">
                         <input type="hidden" name="numPericias" id="numPericias" value="<?php if(empty($data->numPericias)){    echo '1';}else {    echo $data->numPericias;}?>">
+                        <input type="hidden" name="numEquip" id="numEquip" value="<?php if(empty($data->numEquip)){    echo '1';}else {    echo $data->numEquip;}?>">
+                        <input type="hidden" name="numApri" id="numApri" value="<?php if(empty($data->numApri)){    echo '1';}else {    echo $data->numApri;}?>">
+
                         <div class="row">
                                 <div class="col col-sm-4 ">
                                         <img src="logo.png" alt="" height="200" width="300" id="pjimg">
@@ -111,7 +118,7 @@ require_once "manage.php";
                                         </div>
                                         <div class="col atributos"></div>
                                 </div>
-                                <!-- ANCHOR ATRIBUTO FORÇA -->
+                                <!-- CAMPO ATRIBUTO FORÇA -->
                                 <div class="row">
                                         <div class="col "><label for="" class="pj_info">FOR</label></div>
                                         <div class="col div_for"><input type="number" min="0"
@@ -129,7 +136,7 @@ require_once "manage.php";
                                         </div>
                                         <div class="col dado div_for" ></div>
                                 </div>
-                                <!-- ANCHOR ATRIBUTO CONSTITUICAO -->
+                                <!-- CAMPO ATRIBUTO CONSTITUICAO -->
                                 <div class="row">
                                         <div class="col "><label for="" class="pj_info">CON</label></div>
                                         <div class="col div_for"><input type="number" min="0" value="<?php if(empty($data->atr_con_orig)){    echo '0';}else {    echo $data->atr_con_orig;}?>"
@@ -146,7 +153,7 @@ require_once "manage.php";
                                         </div>
                                         <div class="col dado div_for" ></div>
                                 </div>
-                                <!-- ANCHOR ATRIBUTO DESTREZA -->
+                                <!-- CAMPO ATRIBUTO DESTREZA -->
                                 <div class="row">
                                         <div class="col "><label for="" class="pj_info">DES</label></div>
                                         <div class="col div_for"><input type="number" min="0" value="<?php if(empty($data->atr_des_orig)){    echo '0';}else {    echo $data->atr_des_orig;}?>"
@@ -163,7 +170,7 @@ require_once "manage.php";
                                         </div>
                                         <div class="col dado div_for" ></div>
                                 </div>
-                                <!-- ANCHOR ATRIBUTO AGILIDADE -->
+                                <!-- CAMPO ATRIBUTO AGILIDADE -->
                                 <div class="row">
                                         <div class="col "><label for="" class="pj_info">AGI</label></div>
                                         <div class="col div_for"><input type="number" min="0" value="<?php if(empty($data->atr_agi_orig)){    echo '0';}else {    echo $data->atr_agi_orig;}?>"
@@ -180,7 +187,7 @@ require_once "manage.php";
                                         </div>
                                         <div class="col dado div_for" ></div>
                                 </div>
-                                <!-- ANCHOR ATRIBUTO PERCEPÇAO -->
+                                <!-- CAMPO ATRIBUTO PERCEPÇAO -->
                                 <div class="row">
                                         <div class="col "><label for="" class="pj_info">PER</label></div>
                                         <div class="col div_for"><input type="number" min="0" value="<?php if(empty($data->atr_per_orig)){    echo '0';}else {    echo $data->atr_per_orig;}?>"
@@ -197,7 +204,7 @@ require_once "manage.php";
                                         </div>
                                         <div class="col dado div_for" ></div>
                                 </div>
-                                <!-- ANCHOR ATRIBUTO INTELIGENCIA -->
+                                <!-- CAMPO ATRIBUTO INTELIGENCIA -->
                                 <div class="row">
                                         <div class="col "><label for="" class="pj_info">INT</label></div>
                                         <div class="col div_for"><input type="number" min="0" value="<?php if(empty($data->atr_int_orig)){    echo '0';}else {    echo $data->atr_int_orig;}?>"
@@ -214,7 +221,7 @@ require_once "manage.php";
                                 </div>
                                 <div class="col dado div_for" ></div>
                                 </div>
-                                <!-- ANCHOR ATRIBUTO VONTADE -->
+                                <!-- CAMPO ATRIBUTO VONTADE -->
                                 <div class="row">
                                         <div class="col "><label for="" class="pj_info">VON</label></div>
                                         <div class="col div_for"><input type="number" min="0" value="<?php if(empty($data->atr_von_orig)){    echo '0';}else {    echo $data->atr_von_orig;}?>"
@@ -231,7 +238,7 @@ require_once "manage.php";
                                 </div>
                                 <div class="col dado div_for" ></div>
                                 </div>
-                                <!-- ANCHOR ATRIBUTO CARISMA -->
+                                <!-- CAMPO ATRIBUTO CARISMA -->
                                 <div class="row">
                                         <div class="col "><label for="" class="pj_info">CAR</label></div>
                                         <div class="col div_for"><input type="number" min="0" value="<?php if(empty($data->atr_car_orig)){    echo '0';}else {    echo $data->atr_car_orig;}?>"
@@ -250,7 +257,7 @@ require_once "manage.php";
                                 </div>
                         </div>
 
-                        <!-- ANCHOR PLAYER INFO -->
+                        <!-- ABA PLAYER INFO -->
 
                         <h3 style="padding:8px; background-color:black;"></h3>
                         <div class="container">
@@ -321,7 +328,7 @@ require_once "manage.php";
         </div>
 
 
-        <!-- ANCHOR ABA BIOGRAFIA -->
+        <!-- ABA BIOGRAFIA -->
         <div class="bio">
                 <div class="container">
                         
@@ -345,10 +352,12 @@ require_once "manage.php";
         </div>
 </div>
 
-        <!-- ANCHOR PERICIAS -->
+        <!-- ABA PERICIAS -->
 
         <div class="pericias">
-                <h4 id="atributos-tag">PERICIAS <buttom class='btn add_pericia' id="btn-add-pericia" style="float:right">ADD</buttom> <input type="number" min="<?php echo $data->numPericias;?>" name="countpericia" id="countpericia" style="float:right;text-align:center;"></h4>
+                <div class="" id="atributos-tag">
+                <h4>PERICIAS <buttom class='btn add_pericia' id="btn-add-pericia" style="float:right; margin-left:12px">ADD</buttom> <buttom class='btn add_pericia' id="btn-sub-pericia" style="float:right">REMOVE</buttom></h4>
+                </div>
                 
                 <div class="container">
                         <div class="row">
@@ -357,6 +366,7 @@ require_once "manage.php";
                                 <div class="col div_for atributos"><label for="">Gasto%</label></div>
                                 <div class="col div_for atributos"><label for="">Extra%</label></div>
                                 <div class="col div_for atributos"><label for="">Total%</label></div>
+                                
                         </div>
                         <div class="all_pericias">
 
@@ -373,7 +383,7 @@ require_once "manage.php";
                                 $gasto = 'gasto'.$j;
                                
                          ?>
-                         <div class="row row_pericia">
+                         <div class="row row_pericia" id="row_pericia<?php echo $j; ?>">
     <div class="col div_for "><input type="text" class="form-control pericia" name="pericia<?php echo $j; ?>" id="pericia<?php echo $j; ?>"
             value="<?php if(empty($data->$pericia)){    echo '';}else {    echo $data->$pericia;}?>"></div>
     <div class="col div_for "><select name="base<?php echo $j; ?>" id="base<?php echo $j; ?>" class="form-control pericia"
@@ -406,12 +416,13 @@ require_once "manage.php";
                         </div>
                 </div>
         </div>
-        <!-- COMBATE -->
-        <div class="combate">
+<!-- ABA COMBATE -->
+        <div class="combate" >
                 <h4 id="atributos-tag">COMBATE</h4>
                 <div class="contaier">
                         <div class="row">
                                 <div class="col atributos"><label for="">Nome</label></div>
+                                <div class="col atributos"><label for="">Tipo</label></div>
                                 <div class="col atributos"><label for="">Base</label></div>
                                 <div class="col atributos"><label for="">Gasto</label></div>
                                 <div class="col atributos"><label for="">%Ataque</label></div>
@@ -421,9 +432,14 @@ require_once "manage.php";
                         </div>
                         <div class="row row_combate">
                                 <div class="col div_for"><input type="text" name="combate1" class="form-control" value="<?php if(empty($data->combate1)){    echo '';}else {    echo $data->combate1;}?>"></div>
+                                <div class="col div_for"><select name="combateTipo1" id="combateTipo1" class="form-control">
+                                        <option  selected hidden value="<?php if(empty($data->combateTipo1)){    echo '';}else {    echo $data->combateTipo1;}?>"><?php if(empty($data->combateTipo1)){    echo '0';}else {    echo $data->combateTipo1;}?></option>
+                                        <option value="CORPO A CORPO">CORPO A CORPO</option>
+                                        <option value="A DISTANCIA">A DISTANCIA</option>
+                                </select></div>
                                 <div class="col div_for"><select name="combateBase1" id="combateBase1"
-                                                class="form-control">
-                                                <option value="<?php if(empty($data->combateBase1)){    echo '0';}else {    echo $data->combateBase1;}?>"><?php if(empty($data->combateBase1)){    echo '0';}else {    echo $data->combateBase1;}?></option>
+                                                class="form-control" style="text-transform: uppercase;" >
+                                                <option selected hidden value="<?php if(empty($data->combateBase1)){    echo 'des';}else {    echo $data->combateBase1;}?>"><?php if(empty($data->combateBase1)){    echo '';}else {    echo $data->combateBase1;}?></option>
                                                 <option value="for">FOR</option>
                                                 <option value="con">CON</option>
                                                 <option value="des">DES</option>
@@ -445,9 +461,14 @@ require_once "manage.php";
 
                         <div class="row row_combate">
                                 <div class="col div_for"><input type="text" name="combate2" class="form-control" value="<?php if(empty($data->combate2)){    echo '';}else {    echo $data->combate2;}?>"></div>
+                                <div class="col div_for"><select name="combateTipo2" id="combateTipo2" class="form-control" style="text-transform: uppercase;">
+                                        <option  selected hidden value="<?php if(empty($data->combateTipo2)){    echo '';}else {    echo $data->combateTipo2;}?>"><?php if(empty($data->combateTipo2)){    echo '0';}else {    echo $data->combateTipo2;}?></option>
+                                        <option value="CORPO A CORPO">CORPO A CORPO</option>
+                                        <option value="A DISTANCIA">A DISTANCIA</option>
+                                </select></div>
                                 <div class="col div_for"><select name="combateBase2" id="combateBase2"
-                                                class="form-control">
-                                                <option value="<?php if(empty($data->combateBase2)){    echo '0';}else {    echo $data->combateBase2;}?>"><?php if(empty($data->combateBase2)){    echo '0';}else {    echo $data->combateBase2;}?></option>
+                                                class="form-control" style="text-transform: uppercase;">
+                                                <option selected hidden value="<?php if(empty($data->combateBase2)){    echo 'des';}else {    echo $data->combateBase2;}?>"><?php if(empty($data->combateBase2)){    echo '';}else {    echo $data->combateBase2;}?></option>
                                                 <option value="for">FOR</option>
                                                 <option value="con">CON</option>
                                                 <option value="des">DES</option>
@@ -469,9 +490,14 @@ require_once "manage.php";
 
                         <div class="row row_combate">
                                 <div class="col div_for"><input type="text" name="combate3" class="form-control" value="<?php if(empty($data->combate3)){    echo '';}else {    echo $data->combate3;}?>"></div>
+                                <div class="col div_for"><select name="combateTipo3" id="combateTipo3" class="form-control" style="text-transform: uppercase;">
+                                        <option  selected hidden value="<?php if(empty($data->combateTipo3)){    echo '';}else {    echo $data->combateTipo3;}?>"><?php if(empty($data->combateTipo3)){    echo '0';}else {    echo $data->combateTipo3;}?></option>
+                                        <option value="CORPO A CORPO">CORPO A CORPO</option>
+                                        <option value="A DISTANCIA">A DISTANCIA</option>
+                                </select></div>
                                 <div class="col div_for"><select name="combateBase3" id="combateBase3"
-                                                class="form-control">
-                                                <option value="<?php if(empty($data->combateBase3)){    echo '0';}else {    echo $data->combateBase3;}?>"><?php if(empty($data->combateBase3)){    echo '0';}else {    echo $data->combateBase3;}?></option>
+                                                class="form-control" style="text-transform: uppercase;">
+                                                <option selected hidden value="<?php if(empty($data->combateBase3)){    echo 'des';}else {    echo $data->combateBase3;}?>"><?php if(empty($data->combateBase3)){    echo '';}else {    echo $data->combateBase3;}?></option>
                                                 <option value="for">FOR</option>
                                                 <option value="con">CON</option>
                                                 <option value="des">DES</option>
@@ -494,9 +520,14 @@ require_once "manage.php";
                         
                         <div class="row row_combate">
                                 <div class="col div_for"><input type="text" name="combate4" class="form-control" value="<?php if(empty($data->combate4)){    echo '';}else {    echo $data->combate4;}?>"></div>
+                                <div class="col div_for"><select name="combateTipo4" id="combateTipo4" class="form-control" style="text-transform: uppercase;">
+                                        <option  selected hidden value="<?php if(empty($data->combateTipo4)){    echo '';}else {    echo $data->combateTipo4;}?>"><?php if(empty($data->combateTipo4)){    echo '0';}else {    echo $data->combateTipo4;}?></option>
+                                        <option value="CORPO A CORPO">CORPO A CORPO</option>
+                                        <option value="A DISTANCIA">A DISTANCIA</option>
+                                </select></div>
                                 <div class="col div_for"><select name="combateBase4" id="combateBase4"
-                                                class="form-control">
-                                                <option value="<?php if(empty($data->combateBase4)){    echo '0';}else {    echo $data->combateBase4;}?>"><?php if(empty($data->combateBase4)){    echo '0';}else {    echo $data->combateBase4;}?></option>
+                                                class="form-control" style="text-transform: uppercase;">
+                                                <option selected hidden value="<?php if(empty($data->combateBase4)){    echo 'des';}else {    echo $data->combateBase4;}?>"><?php if(empty($data->combateBase4)){    echo '';}else {    echo $data->combateBase4;}?></option>
                                                 <option value="for">FOR</option>
                                                 <option value="con">CON</option>
                                                 <option value="des">DES</option>
@@ -518,9 +549,14 @@ require_once "manage.php";
 
                         <div class="row row_combate">
                                 <div class="col div_for"><input type="text" name="combate5" class="form-control" value="<?php if(empty($data->combate5)){    echo '';}else {    echo $data->combate5;}?>"></div>
+                                <div class="col div_for"><select name="combateTipo5" id="combateTipo5" class="form-control" style="text-transform: uppercase;">
+                                        <option  selected hidden value="<?php if(empty($data->combateTipo5)){    echo '';}else {    echo $data->combateTipo5;}?>"><?php if(empty($data->combateTipo5)){    echo '0';}else {    echo $data->combateTipo5;}?></option>
+                                        <option value="CORPO A CORPO">CORPO A CORPO</option>
+                                        <option value="A DISTANCIA">A DISTANCIA</option>
+                                </select></div>
                                 <div class="col div_for"><select name="combateBase5" id="combateBase5"
-                                                class="form-control">
-                                                <option value="<?php if(empty($data->combateBase5)){    echo '0';}else {    echo $data->combateBase5;}?>"><?php if(empty($data->combateBase5)){    echo '0';}else {    echo $data->combateBase5;}?></option>
+                                                class="form-control" style="text-transform: uppercase;">
+                                                <option selected hidden value="<?php if(empty($data->combateBase5)){    echo 'des';}else {    echo $data->combateBase5;}?>"><?php if(empty($data->combateBase5)){    echo '';}else {    echo $data->combateBase5;}?></option>
                                                 <option value="for">FOR</option>
                                                 <option value="con">CON</option>
                                                 <option value="des">DES</option>
@@ -541,12 +577,16 @@ require_once "manage.php";
                         </div>
 
                  </div>
-                <!-- Equipamentos -->
+                <!-- ABA  EQUIPAMENTOS -->
 
         </div>
 
         <div class="equipamentos">
-                <h4 id="atributos-tag">EQUIPAMENTOS</h4>
+        <div class="" id="atributos-tag">
+                <h4>EQUIPAMENTOS <buttom class='btn add_pericia' id="btn-add-equip" style="float:right; margin-left:12px">ADD</buttom> <buttom class='btn add_pericia' id="btn-sub-equip" style="float:right">REMOVE</buttom></h4>
+                </div>
+
+               
                 <div class="container">
                         <div class="row">
                                 <div class="col atributos"><label for="">Nome</label></div>
@@ -555,114 +595,35 @@ require_once "manage.php";
                                 <div class="col atributos"><label for="">Durabilidade</label></div>
                         </div>
 
-                        <div class="row">
-                                <div class="col div_for"><input type="text" name="equip1" class="form-control" value="<?php if(empty($data->equip1)){    echo '';}else {    echo $data->equip1;}?>"></div>
-                                <div class="col div_for"><input type="number" name="quant1" class="form-control" value="<?php if(empty($data->quant1)){    echo '0';}else {    echo $data->quant1;}?>"></div>
-                                <div class="col div_for"><input type="text" name="peso1" class="form-control" value="<?php if(empty($data->peso1)){    echo '';}else {    echo $data->peso1;}?>"></div>
-                                <div class="col div_for"><input type="text" name="dura1" class="form-control" value="<?php if(empty($data->dura1)){    echo '';}else {    echo $data->dura1;}?>"></div>
-                        </div>
+                        <div class="all_equips">
+                                <?php
 
-                        <div class="row">
-                                <div class="col div_for"><input type="text" name="equip2" class="form-control" value="<?php if(empty($data->equip2)){    echo '';}else {    echo $data->equip2;}?>"></div>
-                                <div class="col div_for"><input type="number" name="quant2" class="form-control" value="<?php if(empty($data->quant2)){    echo '0';}else {    echo $data->quant2;}?>"></div>
-                                <div class="col div_for"><input type="text" name="peso2" class="form-control" value="<?php if(empty($data->peso2)){    echo '';}else {    echo $data->peso2;}?>"></div>
-                                <div class="col div_for"><input type="text" name="dura2" class="form-control" value="<?php if(empty($data->dura2)){    echo '';}else {    echo $data->dura2;}?>"></div>
-                        </div>
 
-                        <div class="row">
-                                <div class="col div_for"><input type="text" name="equip3" class="form-control" value="<?php if(empty($data->equip3)){    echo '';}else {    echo $data->equip3;}?>"></div>
-                                <div class="col div_for"><input type="number" name="quant3" class="form-control" value="<?php if(empty($data->quant3)){    echo '0';}else {    echo $data->quant3;}?>"></div>
-                                <div class="col div_for"><input type="text" name="peso3" class="form-control" value="<?php if(empty($data->peso3)){    echo '';}else {    echo $data->peso3;}?>"></div>
-                                <div class="col div_for"><input type="text" name="dura3" class="form-control" value="<?php if(empty($data->dura3)){    echo '';}else {    echo $data->dura3;}?>"></div>
-                        </div>
+                                $numeq = $data->numEquip;
+                                $k = 1;
+                                for($i=1;$i<=$numeq;$i++){
+                                $equip = 'equip'.$k;
+                                $quant = 'quant'.$k;
+                                $peso = 'peso'.$k;
+                                $dura = 'dura'.$k;
+                        
+                       
+                                ?>
 
-                        <div class="row">
-                                <div class="col div_for"><input type="text" name="equip4" class="form-control" value="<?php if(empty($data->equip4)){    echo '';}else {    echo $data->equip4;}?>"></div>
-                                <div class="col div_for"><input type="number" name="quant4" class="form-control" value="<?php if(empty($data->quant4)){    echo '0';}else {    echo $data->quant4;}?>"></div>
-                                <div class="col div_for"><input type="text" name="peso4" class="form-control" value="<?php if(empty($data->peso4)){    echo '';}else {    echo $data->peso4;}?>"></div>
-                                <div class="col div_for"><input type="text" name="dura4" class="form-control" value="<?php if(empty($data->dura4)){    echo '';}else {    echo $data->dura4;}?>"></div>
-                        </div>
+                                <div class="row" id="row_equip<?php echo $k;?>">
+                                        <div class="col div_for"><input type="text" name="equip<?php echo $k; ?>" class="form-control" value="<?php if(empty($data->$equip)){    echo '';}else {    echo $data->$equip;}?>"></div>
+                                        <div class="col div_for"><input type="number" name="quant<?php echo $k; ?>" class="form-control" value="<?php if(empty($data->$quant)){    echo '0';}else {    echo $data->$quant;}?>"></div>
+                                        <div class="col div_for"><input type="text" name="peso<?php echo $k; ?>" class="form-control" value="<?php if(empty($data->$peso)){    echo '';}else {    echo $data->$peso;}?>"></div>
+                                        <div class="col div_for"><input type="text" name="dura<?php echo $k; ?>" class="form-control" value="<?php if(empty($data->$dura)){    echo '';}else {    echo $data->$dura;}?>"></div>
+                                </div>
 
-                        <div class="row">
-                                <div class="col div_for"><input type="text" name="equip5" class="form-control" value="<?php if(empty($data->equip5)){    echo '';}else {    echo $data->equip5;}?>"></div>
-                                <div class="col div_for"><input type="number" name="quant5" class="form-control" value="<?php if(empty($data->quant5)){    echo '0';}else {    echo $data->quant5;}?>"></div>
-                                <div class="col div_for"><input type="text" name="peso5" class="form-control" value="<?php if(empty($data->peso5)){    echo '';}else {    echo $data->peso5;}?>"></div>
-                                <div class="col div_for"><input type="text" name="dura5" class="form-control" value="<?php if(empty($data->dura5)){    echo '';}else {    echo $data->dura5;}?>"></div>
-                        </div>
-
-                        <div class="row">
-                                <div class="col div_for"><input type="text" name="equip6" class="form-control" value="<?php if(empty($data->equip6)){    echo '';}else {    echo $data->equip6;}?>"></div>
-                                <div class="col div_for"><input type="number" name="quant6" class="form-control" value="<?php if(empty($data->quant6)){    echo '0';}else {    echo $data->quant6;}?>"></div>
-                                <div class="col div_for"><input type="text" name="peso6" class="form-control" value="<?php if(empty($data->peso6)){    echo '';}else {    echo $data->peso6;}?>"></div>
-                                <div class="col div_for"><input type="text" name="dura6" class="form-control" value="<?php if(empty($data->dura6)){    echo '';}else {    echo $data->dura6;}?>"></div>
-                        </div>
-
-                        <div class="row">
-                                <div class="col div_for"><input type="text" name="equip7" class="form-control" value="<?php if(empty($data->equip7)){    echo '';}else {    echo $data->equip7;}?>"></div>
-                                <div class="col div_for"><input type="number" name="quant7" class="form-control" value="<?php if(empty($data->quant7)){    echo '0';}else {    echo $data->quant7;}?>"></div>
-                                <div class="col div_for"><input type="text" name="peso7" class="form-control" value="<?php if(empty($data->peso7)){    echo '';}else {    echo $data->peso7;}?>"></div>
-                                <div class="col div_for"><input type="text" name="dura7" class="form-control" value="<?php if(empty($data->dura7)){    echo '';}else {    echo $data->dura7;}?>"></div>
-                        </div>
-
-                        <div class="row">
-                                <div class="col div_for"><input type="text" name="equip8" class="form-control" value="<?php if(empty($data->equip8)){    echo '';}else {    echo $data->equip8;}?>"></div>
-                                <div class="col div_for"><input type="number" name="quant8" class="form-control" value="<?php if(empty($data->quant8)){    echo '0';}else {    echo $data->quant8;}?>"></div>
-                                <div class="col div_for"><input type="text" name="peso8" class="form-control" value="<?php if(empty($data->peso8)){    echo '';}else {    echo $data->peso8;}?>"></div>
-                                <div class="col div_for"><input type="text" name="dura8" class="form-control" value="<?php if(empty($data->dura8)){    echo '';}else {    echo $data->dura8;}?>"></div>
-                        </div>
-
-                        <div class="row">
-                                <div class="col div_for"><input type="text" name="equip9" class="form-control" value="<?php if(empty($data->equip9)){    echo '';}else {    echo $data->equip9;}?>"></div>
-                                <div class="col div_for"><input type="number" name="quant9" class="form-control" value="<?php if(empty($data->quant9)){    echo '0';}else {    echo $data->quant9;}?>"></div>
-                                <div class="col div_for"><input type="text" name="peso9" class="form-control" value="<?php if(empty($data->peso9)){    echo '';}else {    echo $data->peso9;}?>"></div>
-                                <div class="col div_for"><input type="text" name="dura9" class="form-control" value="<?php if(empty($data->dura9)){    echo '';}else {    echo $data->dura9;}?>"></div>
-                        </div>
-
-                         <div class="row">
-                                <div class="col div_for"><input type="text" name="equip10" class="form-control" value="<?php if(empty($data->equip10)){    echo '';}else {    echo $data->equip10;}?>"></div>
-                                <div class="col div_for"><input type="number" name="quant10" class="form-control" value="<?php if(empty($data->quant10)){    echo '0';}else {    echo $data->quant10;}?>"></div>
-                                <div class="col div_for"><input type="text" name="peso10" class="form-control" value="<?php if(empty($data->peso10)){    echo '';}else {    echo $data->peso10;}?>"></div>
-                                <div class="col div_for"><input type="text" name="dura10" class="form-control" value="<?php if(empty($data->dura10)){    echo '';}else {    echo $data->dura10;}?>"></div>
-                        </div>
-
-                        <div class="row">
-                                <div class="col div_for"><input type="text" name="equip11" class="form-control" value="<?php if(empty($data->equip11)){    echo '';}else {    echo $data->equip11;}?>"></div>
-                                <div class="col div_for"><input type="number" name="quant11" class="form-control" value="<?php if(empty($data->quant11)){    echo '0';}else {    echo $data->quant11;}?>"></div>
-                                <div class="col div_for"><input type="text" name="peso11" class="form-control" value="<?php if(empty($data->peso11)){    echo '';}else {    echo $data->peso11;}?>"></div>
-                                <div class="col div_for"><input type="text" name="dura11" class="form-control" value="<?php if(empty($data->dura11)){    echo '';}else {    echo $data->dura11;}?>"></div>
-                        </div>
-
-                        <div class="row">
-                                <div class="col div_for"><input type="text" name="equip12" class="form-control" value="<?php if(empty($data->equip12)){    echo '';}else {    echo $data->equip12;}?>"></div>
-                                <div class="col div_for"><input type="number" name="quant12" class="form-control" value="<?php if(empty($data->quant12)){    echo '0';}else {    echo $data->quant12;}?>"></div>
-                                <div class="col div_for"><input type="text" name="peso12" class="form-control" value="<?php if(empty($data->peso12)){    echo '';}else {    echo $data->peso12;}?>"></div>
-                                <div class="col div_for"><input type="text" name="dura12" class="form-control" value="<?php if(empty($data->dura12)){    echo '';}else {    echo $data->dura12;}?>"></div>
-                        </div>
-
-                        <div class="row">
-                                <div class="col div_for"><input type="text" name="equip13" class="form-control" value="<?php if(empty($data->equip13)){    echo '';}else {    echo $data->equip13;}?>"></div>
-                                <div class="col div_for"><input type="number" name="quant13" class="form-control" value="<?php if(empty($data->quant13)){    echo '0';}else {    echo $data->quant13;}?>"></div>
-                                <div class="col div_for"><input type="text" name="peso13" class="form-control" value="<?php if(empty($data->peso13)){    echo '';}else {    echo $data->peso13;}?>"></div>
-                                <div class="col div_for"><input type="text" name="dura13" class="form-control" value="<?php if(empty($data->dura13)){    echo '';}else {    echo $data->dura13;}?>"></div>
-                        </div>
-
-                        <div class="row">
-                                <div class="col div_for"><input type="text" name="equip14" class="form-control" value="<?php if(empty($data->equip14)){    echo '';}else {    echo $data->equip14;}?>"></div>
-                                <div class="col div_for"><input type="number" name="quant14" class="form-control" value="<?php if(empty($data->quant14)){    echo '0';}else {    echo $data->quant14;}?>"></div>
-                                <div class="col div_for"><input type="text" name="peso14" class="form-control" value="<?php if(empty($data->peso14)){    echo '';}else {    echo $data->peso14;}?>"></div>
-                                <div class="col div_for"><input type="text" name="dura14" class="form-control" value="<?php if(empty($data->dura14)){    echo '';}else {    echo $data->dura14;}?>"></div>
-                        </div>
-
-                        <div class="row">
-                                <div class="col div_for"><input type="text" name="equip15" class="form-control" value="<?php if(empty($data->equip15)){    echo '';}else {    echo $data->equip15;}?>"></div>
-                                <div class="col div_for"><input type="number" name="quant15" class="form-control" value="<?php if(empty($data->quant15)){    echo '0';}else {    echo $data->quant15;}?>"></div>
-                                <div class="col div_for"><input type="text" name="peso15" class="form-control" value="<?php if(empty($data->peso15)){    echo '';}else {    echo $data->peso15;}?>"></div>
-                                <div class="col div_for"><input type="text" name="dura15" class="form-control" value="<?php if(empty($data->dura15)){    echo '';}else {    echo $data->dura15;}?>"></div>
+                                <?php $k++; } ?>
                         </div>
 
                 </div>
         </div>
 
+        <!-- ABA MAGIA -->
         <div class="magia">
                 <h4 id="atributos-tag">FORMAS E CAMINHOS</h4>
                 <div class="container">
@@ -812,66 +773,98 @@ require_once "manage.php";
                 </div>
         </div>
 
+        <!-- ABA APRIMORAMENTOS -->
         <div class="aprimoramentos">
-                <h4 id="atributos-tag">Aprimoramentos</h4>
+        <div class="" id="atributos-tag">
+                <h4>APRIMORAMENTOS <buttom class='btn add_pericia' id="btn-add-apri" style="float:right; margin-left:12px">ADD</buttom> <buttom class='btn add_pericia' id="btn-sub-apri" style="float:right">REMOVE</buttom></h4>
+                </div>
                 <div class="container">
                         <div class="row">
                                 <div class="col col-sm-5 atributos"><label for="">Nome</label></div>
                                 <div class="col col-sm-2 atributos"><label for="">Custo</label></div>
                                 <div class="col col-sm-5 atributos"><label for="">Descrição</label></div>
                         </div>
-                        <div class="row">
-                                <div class="col col-sm-5 div_for"><input type="text" name="apri_nome1" class="form-control" value="<?php if(empty($data->apri_nome1)){    echo '';}else {    echo $data->apri_nome1;}?>" ></div>
-                                <div class="col col-sm-2 div_for"><input type="number" name="apri_custo1" id="" class="form-control" value="<?php if(empty($data->apri_custo1)){    echo '0';}else {    echo $data->apri_custo1;}?>"></div>
-                                <div class="col col-sm-5 div_for"><input type="text" name="apri_desc1" class="form-control" value="<?php if(empty($data->apri_desc1)){    echo '';}else {    echo $data->apri_desc1;}?>"></div>
+
+                        <div class="all_apri">
+                        <?php 
+                        $numapri = $data->numApri;
+                                $a = 1;
+                                for($i=1;$i<=$numapri;$i++){
+                                $anome = 'apri_nome'.$a;
+                                $acusto = 'apri_custo'.$a;
+                                $adesc = 'apri_desc'.$a;
+                         
+                        ?>
+                        <div class="row" id="row_apri<?php echo $a; ?>">
+                                <div class="col col-sm-5 div_for"><input type="text" name="apri_nome<?php echo $a;?>" class="form-control" value="<?php if(empty($data->$anome)){    echo '';}else {    echo $data->$anome;}?>" ></div>
+                                <div class="col col-sm-2 div_for"><input type="number" name="apri_custo<?php echo $a;?>" id="" class="form-control" value="<?php if(empty($data->$acusto)){    echo '0';}else {    echo $data->$acusto;}?>"></div>
+                                <div class="col col-sm-5 div_for"><input type="text" name="apri_desc<?php echo $a;?>" class="form-control" value="<?php if(empty($data->$adesc)){    echo '';}else {    echo $data->$adesc;}?>"></div>
                         </div>
-                        <div class="row">
-                                <div class="col col-sm-5 div_for"><input type="text" name="apri_nome2" class="form-control" value="<?php if(empty($data->apri_nome2)){    echo '';}else {    echo $data->apri_nome2;}?>" ></div>
-                                <div class="col col-sm-2 div_for"><input type="number" name="apri_custo2" id="" class="form-control" value="<?php if(empty($data->apri_custo2)){    echo '0';}else {    echo $data->apri_custo2;}?>"></div>
-                                <div class="col col-sm-5 div_for"><input type="text" name="apri_desc2" class="form-control" value="<?php if(empty($data->apri_desc2)){    echo '';}else {    echo $data->apri_desc2;}?>"></div>
-                        </div>
-                        <div class="row">
-                                <div class="col col-sm-5 div_for"><input type="text" name="apri_nome3" class="form-control" value="<?php if(empty($data->apri_nome3)){    echo '';}else {    echo $data->apri_nome3;}?>" ></div>
-                                <div class="col col-sm-2 div_for"><input type="number" name="apri_custo3" id="" class="form-control" value="<?php if(empty($data->apri_custo3)){    echo '0';}else {    echo $data->apri_custo3;}?>"></div>
-                                <div class="col col-sm-5 div_for"><input type="text" name="apri_desc3" class="form-control" value="<?php if(empty($data->apri_desc3)){    echo '';}else {    echo $data->apri_desc3;}?>"></div>
-                        </div>
-                        <div class="row">
-                                <div class="col col-sm-5 div_for"><input type="text" name="apri_nome4" class="form-control" value="<?php if(empty($data->apri_nome4)){    echo '';}else {    echo $data->apri_nome4;}?>" ></div>
-                                <div class="col col-sm-2 div_for"><input type="number" name="apri_custo4" id="" class="form-control" value="<?php if(empty($data->apri_custo4)){    echo '0';}else {    echo $data->apri_custo4;}?>"></div>
-                                <div class="col col-sm-5 div_for"><input type="text" name="apri_desc4" class="form-control" value="<?php if(empty($data->apri_desc4)){    echo '';}else {    echo $data->apri_desc4;}?>"></div>
-                        </div>
-                        <div class="row">
-                                <div class="col col-sm-5 div_for"><input type="text" name="apri_nome5" class="form-control" value="<?php if(empty($data->apri_nome5)){    echo '';}else {    echo $data->apri_nome5;}?>" ></div>
-                                <div class="col col-sm-2 div_for"><input type="number" name="apri_custo5" id="" class="form-control" value="<?php if(empty($data->apri_custo5)){    echo '0';}else {    echo $data->apri_custo5;}?>"></div>
-                                <div class="col col-sm-5 div_for"><input type="text" name="apri_desc5" class="form-control" value="<?php if(empty($data->apri_desc5)){    echo '';}else {    echo $data->apri_desc5;}?>"></div>
-                        </div>
-                        <div class="row">
-                                <div class="col col-sm-5 div_for"><input type="text" name="apri_nome6" class="form-control" value="<?php if(empty($data->apri_nome6)){    echo '';}else {    echo $data->apri_nome6;}?>" ></div>
-                                <div class="col col-sm-2 div_for"><input type="number" name="apri_custo6" id="" class="form-control" value="<?php if(empty($data->apri_custo6)){    echo '0';}else {    echo $data->apri_custo6;}?>"></div>
-                                <div class="col col-sm-5 div_for"><input type="text" name="apri_desc6" class="form-control" value="<?php if(empty($data->apri_desc6)){    echo '';}else {    echo $data->apri_desc6;}?>"></div>
-                        </div>
-                        <div class="row">
-                                <div class="col col-sm-5 div_for"><input type="text" name="apri_nome7" class="form-control" value="<?php if(empty($data->apri_nome7)){    echo '';}else {    echo $data->apri_nome7;}?>" ></div>
-                                <div class="col col-sm-2 div_for"><input type="number" name="apri_custo7" id="" class="form-control" value="<?php if(empty($data->apri_custo7)){    echo '0';}else {    echo $data->apri_custo7;}?>"></div>
-                                <div class="col col-sm-5 div_for"><input type="text" name="apri_desc7" class="form-control" value="<?php if(empty($data->apri_desc7)){    echo '';}else {    echo $data->apri_desc7;}?>"></div>
-                        </div>
-                        <div class="row">
-                                <div class="col col-sm-5 div_for"><input type="text" name="apri_nome8" class="form-control" value="<?php if(empty($data->apri_nome8)){    echo '';}else {    echo $data->apri_nome8;}?>" ></div>
-                                <div class="col col-sm-2 div_for"><input type="number" name="apri_custo8" id="" class="form-control" value="<?php if(empty($data->apri_custo8)){    echo '0';}else {    echo $data->apri_custo8;}?>"></div>
-                                <div class="col col-sm-5 div_for"><input type="text" name="apri_desc8" class="form-control" value="<?php if(empty($data->apri_desc8)){    echo '';}else {    echo $data->apri_desc8;}?>"></div>
-                        </div>
-                        <div class="row">
-                                <div class="col col-sm-5 div_for"><input type="text" name="apri_nome9" class="form-control" value="<?php if(empty($data->apri_nome9)){    echo '';}else {    echo $data->apri_nome9;}?>" ></div>
-                                <div class="col col-sm-2 div_for"><input type="number" name="apri_custo9" id="" class="form-control" value="<?php if(empty($data->apri_custo9)){    echo '0';}else {    echo $data->apri_custo9;}?>"></div>
-                                <div class="col col-sm-5 div_for"><input type="text" name="apri_desc9" class="form-control" value="<?php if(empty($data->apri_desc9)){    echo '';}else {    echo $data->apri_desc9;}?>"></div>
-                        </div>
-                        <div class="row">
-                                <div class="col col-sm-5 div_for"><input type="text" name="apri_nome10" class="form-control" value="<?php if(empty($data->apri_nome10)){    echo '';}else {    echo $data->apri_nome10;}?>" ></div>
-                                <div class="col col-sm-2 div_for"><input type="number" name="apri_custo10" id="" class="form-control" value="<?php if(empty($data->apri_custo10)){    echo '0';}else {    echo $data->apri_custo10;}?>"></div>
-                                <div class="col col-sm-5 div_for"><input type="text" name="apri_desc10" class="form-control" value="<?php if(empty($data->apri_desc10)){    echo '';}else {    echo $data->apri_desc10;}?>"></div>
+                        <?php $a++; } ?>
                         </div>
                 </div>
         </div>
 </form>
 </div>
 </div>
+
+
+<!-- ANCHOR SCRIPTS -->
+<script>
+        function calculaAtributo(){
+   let size = jQuery('.row_pericia').length;
+    for(i=1;i<=size;i++){
+       
+        let base = jQuery('#base'+i).val();
+
+        let orig;
+        if(base === '0'){
+            orig = 0;
+        }else{
+            orig = parseInt(jQuery('input[name=atr_'+base+'_orig]').val());
+       
+        }
+        let gasto = parseInt(jQuery('input[name=gasto'+i+']').val());
+  
+        let extra = parseInt(jQuery('input[name=extra'+i+']').val());
+     
+        let total =  orig + gasto + extra;
+        console.log(total)
+        jQuery('#total'+i).val(total);
+
+        cbtbase = jQuery('#combateBase'+i).val();
+        cbtgasto = jQuery('input[name=combateGasto'+i+']').val();
+        cbttipo = jQuery('#combateTipo'+i).val();
+
+    }
+}
+
+function salvaDados(){
+    let form = new FormData(jQuery("form[name='form_daemon']")[0]);
+    let img = jQuery('#player_img').attr('src');
+    if((document.getElementById("pj_img").files.length == 0) && (img != 'img/') ){
+        jQuery('#checkImg').val(img);
+    }
+    if(img == 'img/'){
+        jQuery('#player_img').attr('src',jQuery('#checkImg').val());
+    }
+      
+jQuery.ajax({
+    type: "post",
+    url: "control.php",
+    data: form,
+    processData: false,
+    contentType: false,
+    success: function (response) {
+        console.log("sucesso");
+    },
+    error: function(response){
+        console.log("erro");
+    }
+    
+});
+}
+</script>
+
+</body>
+

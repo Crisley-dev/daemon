@@ -1,102 +1,97 @@
 body{
-    background-color: rgba(0,0,0,0.7) !important;
-    margin-top: 22px !important;
-    margin-bottom: 22px !important;
+  background-color: rgba(0,0,0,0.7) !important;
 }
 .corpo {
-    margin: auto;
-    width: 65rem;
-    padding-top: 30px;
+  margin: auto;
+  width: 65rem;
+  padding-top: 30px;
 }
 .form-control {
-    width: 97%;
+  width: 97%;
 }
 #atributos-tag {
-    background-color: black;
-    color: white;
-    font-weight: bold;
-    justify-content: center;
-    text-align: center;
-    padding: 6px;
-    margin: 10px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  justify-content: center;
+  text-align: center;
+  padding: 6px;
+  margin: 10px;
 }
 .div_for {
-    margin: auto;
-    display: block;
-    padding: 4px 0;
+  margin: auto;
+  display: block;
+  padding: 4px 0;
 }
 .atributos {
-    text-align: center;
+  text-align: center;
 }
 .pj_info {
-    text-align: center;
-    justify-content: center;
-    display: block;
-    padding: 4px 0;
+  text-align: center;
+  justify-content: center;
+  display: block;
+  padding: 4px 0;
 }
 .linhas{
-    background-attachment: local;
-    background-image:
-        linear-gradient(to right, white 10px, transparent 10px),
-        linear-gradient(to left, white 10px, transparent 10px),
-        repeating-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
-    line-height: 31px;
-    padding: 8px 10px;
+  background-attachment: local;
+  background-image:
+      linear-gradient(to right, white 10px, transparent 10px),
+      linear-gradient(to left, white 10px, transparent 10px),
+      repeating-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+  line-height: 31px;
+  padding: 8px 10px;
 }
 .Grimorio-L{
-    border-style: solid;
-    border-left: none;
-    border-width: 2px;
+  border-style: solid;
+  border-left: none;
+  border-width: 2px;
 }
 .Grimorio-R{
-    border-style: solid;
-    border-right: none;
-    border-width: 2px;
+  border-style: solid;
+  border-right: none;
+  border-width: 2px;
 }
 #alogout{
-    text-decoration: none;
-    color: rgba(255,255,255,.55);
+  text-decoration: none;
+  color: rgba(255,255,255,.55);
 }
 
 #pj_img{
-    display: none !important;
+  display: none !important;
 }
 
 .main label{
-    font-weight: bold;
-    
+  font-weight: bold;
+  
 }
 input{
-    border-color: black;
-    border-radius: 20px !important;
+  border-color: black;
+  border-radius: 20px !important;
 }
 .faL{
-    background-color: #04AA6D;
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  border-radius: 50%;
+  background-color: #04AA6D;
+border: none;
+color: white;
+padding: 20px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+border-radius: 50%;
 }
 
 .pericia{
-    text-transform: uppercase !important;
+  text-transform: uppercase !important;
 }
 button{
-    background-color: #000 !important;
-    color: #b8a357 !important;
-    border-radius: 25px;
+  background-color: #000 !important;
+  color: #b8a357 !important;
+  border-radius: 25px;
 }
-.add_pericia{
-    background-color: #b8a357 !important;
-    color: #fff !important;
-    height: 35px;
-  }
-#countpericia{
-    width: 60px !important;
+
+.add_pericia {
+  background-color: #b8a357 !important;
+  color: #fff !important;
+
 }
-  
