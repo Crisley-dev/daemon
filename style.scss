@@ -1,14 +1,8 @@
-body{
-    background-color: #212529d5 !important;
-}
+$offcanvas-horizontal-width: 450px;
 
-.main{
-    border: solid 1px;
-    border-color: #222;
-    margin-bottom: 15px;
-}
 .corpo {
-   margin: auto;
+
+    margin: auto;
     width: 65rem;
     padding-top: 60px;
   }
@@ -25,15 +19,18 @@ body{
     margin: 10px;
   }
 
+ 
+
+
   .div_for {
     margin: auto;
     display: block;
     padding: 4px 0;
   }
   .pj_info {
-    text-align: center !important;
-    justify-content: center !important;
-    display: block !important;
+    text-align: center;
+    justify-content: center;
+    display: block;
     padding: 4px 0;
   }
 
@@ -58,15 +55,14 @@ body{
     
   }
   input{
-    border-color: black !important;
+    border-color: black;
     border-radius: 20px !important;
   }
 
-  input[type='number'], select{
-      text-align: center !important;
+  input{
+    border-color: black;
+    border-radius: 20px !important;
   }
-
- 
   .faL{
     background-color: #04AA6D;
   border: none;
@@ -108,7 +104,7 @@ body{
     color: rgb(233, 192, 89);;
 }
 .sidebar-nav .offcanvas {
-    width: 260px;
+    width: 220px;
     border: none;
 }
 .sidebar-nav .offcanvas ul li a span {
@@ -126,10 +122,4 @@ body{
 }
 #offcanvasNavbar{
     background-color: #222;
-}
-.navbar-toggler{
-    margin-left: 10px;
-}
-.container{
-    max-width: 100% !important;
 }

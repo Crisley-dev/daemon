@@ -12,7 +12,7 @@ require_once "manage.php";
     <script src="https://kit.fontawesome.com/c2d6a5c364.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../daemon/node_modules/rpg-awesome/css/rpg-awesome.css">
+    <link rel="stylesheet" href="../node_modules/rpg-awesome/css/rpg-awesome.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -41,12 +41,12 @@ require_once "manage.php";
                 <div class="offcanvas offcanvas-start shadow" tabindex="-1" id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel">
                    
-                        <img src="logo.png" alt="" height="200" width="100%" id="pjimg" style="border:2px solid">
+                        <img src="logo.png" alt="" height="200" width="96%" id="pjimg">
                     
                     <div class="offcanvas-header">
                         <h3 style="color:#fff"><?php echo strtoupper($player); ?></h3>
                     </div>
-                    <div class="offcanvas-body">
+                    <div class="offcanvas-body" >
                         
                         <p style="color:#fff"> Personagem: <?php echo strtoupper($data->pj_name); ?></p>
                         <hr style="color:#fff">
@@ -83,7 +83,7 @@ require_once "manage.php";
                 <input type="hidden" name="numApri" id="numApri"
                     value="<?php if(empty($data->numApri)){    echo '1';}else {    echo $data->numApri;}?>">
 
-                <div class="row">
+                <div class="row" >
                    <div class="col col-sm-2"></div>
                     <div class="col col-sm-4">
                         <input type="text" class="form-control" name="pj_name"
@@ -115,7 +115,7 @@ require_once "manage.php";
                 <h4 id="atributos-tag">ATRIBUTOS</h4>
 
                 <div class="container">
-                    <div class="row">
+                    <div class="row" style="text-align:center !important;">>
                         <div class="col atributos">
                             <label for="">Nome</label>
                         </div>
@@ -419,7 +419,7 @@ require_once "manage.php";
             </div>
 
             <div class="container">
-                <div class="row">
+                <div class="row" style="text-align:center !important;">>
                     <div class="col div_for atributos"><label for="">Nome</label></div>
                     <div class="col div_for atributos"><label for="">Base</label></div>
                     <div class="col div_for atributos"><label for="">Gasto%</label></div>
@@ -484,7 +484,7 @@ require_once "manage.php";
         <div class="combate">
             <h4 id="atributos-tag">COMBATE</h4>
             <div class="contaier">
-                <div class="row">
+                <div class="row" style="text-align:center !important;">>
                     <div class="col atributos"><label for="">Nome</label></div>
                     <div class="col atributos"><label for="">Tipo</label></div>
                     <div class="col atributos"><label for="">Base</label></div>
@@ -717,7 +717,7 @@ require_once "manage.php";
 
 
             <div class="container">
-                <div class="row">
+                <div class="row" style="text-align:center !important;">>
                     <div class="col atributos"><label for="">Nome</label></div>
                     <div class="col atributos"><label for="">Quant.</label></div>
                     <div class="col atributos"><label for="">Peso</label></div>
@@ -763,8 +763,8 @@ require_once "manage.php";
         <div class="magia">
             <h4 id="atributos-tag">FORMAS E CAMINHOS</h4>
             <div class="container">
-                <div class="row">
-                    <div class="col col-sm-2">
+                <div class="row" >
+                    <div class="col col-sm-2" style="text-align:center !important;">
                         <label for="">Fogo</label> <input type="number" class="form-control" name="cam_fogo"
                             value="<?php if(empty($data->cam_fogo)){    echo '0';}else {    echo $data->cam_fogo;}?>">
                         <label for="">Ar</label> <input type="number" class="form-control" name="cam_ar"
@@ -781,7 +781,7 @@ require_once "manage.php";
 
                     <div class="col col-sm-3"></div>
 
-                    <div class="col col-sm-2 atributos">
+                    <div class="col col-sm-2 atributos" style="text-align:center !important;">>
 
                         <label for="">Entender</label><input type="number" class="form-control faL"
                             name="forma_entender"
@@ -797,7 +797,7 @@ require_once "manage.php";
                     <div class="col col-sm-3"></div>
 
 
-                    <div class="col col-sm-2 atributos">
+                    <div class="col col-sm-2 atributos" style="text-align:center !important;">>
                         <label for="">Agua</label> <input type="number" class="form-control" name="cam_agua"
                             value="<?php if(empty($data->cam_agua)){    echo '0';}else {    echo $data->cam_agua;}?>">
                         <label for="">Terra</label> <input type="number" class="form-control" name="cam_terra"
@@ -931,7 +931,7 @@ require_once "manage.php";
                 </h4>
             </div>
             <div class="container">
-                <div class="row">
+                <div class="row" style="text-align:center !important;">
                     <div class="col col-sm-5 atributos"><label for="">Nome</label></div>
                     <div class="col col-sm-2 atributos"><label for="">Custo</label></div>
                     <div class="col col-sm-5 atributos"><label for="">Descrição</label></div>

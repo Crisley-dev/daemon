@@ -56,10 +56,6 @@ jQuery('input,select,textarea').on('blur',function () {
   })
 
 
-jQuery('#att_ficha').on('click', function(){
-    window.location.href("http://rollyourdaemon.tk/ficha.php");
-})
-
 
 jQuery("#btn-add-pericia").click(function(){
     let numPericia =  parseInt(jQuery('#numPericias').val());
@@ -134,7 +130,7 @@ jQuery("#btn-sub-apri").click(function(){
 
 
 
-
+salvaDados();
 
 /* -------------------------------------------------------------------------- */
 /*                                   FUNÇÕES                                  */
@@ -145,7 +141,7 @@ function salvaDados(){
     let img = jQuery('#player_img').attr('src');
     if((document.getElementById("pj_img").files.length == 0) && (img != 'img/') ){
         jQuery('#checkImg').val(img);
-    }
+    } 
     if(img == 'img/'){
         jQuery('#player_img').attr('src',jQuery('#checkImg').val());
     }

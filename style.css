@@ -1,90 +1,85 @@
-body{
-  background-color: rgba(0,0,0,0.7) !important;
-}
 .corpo {
   margin: auto;
   width: 65rem;
-  padding-top: 30px;
+  padding-top: 60px;
 }
+
 .form-control {
   width: 97%;
 }
+
 #atributos-tag {
   background-color: black;
   color: white;
   font-weight: bold;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
   padding: 6px;
   margin: 10px;
 }
+
 .div_for {
   margin: auto;
   display: block;
   padding: 4px 0;
 }
-.atributos {
-  text-align: center;
-}
+
 .pj_info {
   text-align: center;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   display: block;
   padding: 4px 0;
 }
-.linhas{
+
+.linhas {
   background-attachment: local;
-  background-image:
-      linear-gradient(to right, white 10px, transparent 10px),
-      linear-gradient(to left, white 10px, transparent 10px),
-      repeating-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+  background-image: linear-gradient(to right, white 10px, transparent 10px), linear-gradient(to left, white 10px, transparent 10px), repeating-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
   line-height: 31px;
   padding: 8px 10px;
 }
-.Grimorio-L{
-  border-style: solid;
-  border-left: none;
-  border-width: 2px;
-}
-.Grimorio-R{
-  border-style: solid;
-  border-right: none;
-  border-width: 2px;
-}
-#alogout{
-  text-decoration: none;
-  color: rgba(255,255,255,.55);
-}
 
-#pj_img{
+#pj_img {
   display: none !important;
+  border: solid 1.5px !important;
+  border-color: #c2c2c2 !important;
 }
 
-.main label{
+.main label {
   font-weight: bold;
-  
 }
-input{
+
+input {
   border-color: black;
   border-radius: 20px !important;
 }
-.faL{
-  background-color: #04AA6D;
-border: none;
-color: white;
-padding: 20px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
-margin: 4px 2px;
-border-radius: 50%;
+
+input {
+  border-color: black;
+  border-radius: 20px !important;
 }
 
-.pericia{
+.faL {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 50%;
+}
+
+.pericia {
   text-transform: uppercase !important;
 }
-button{
+
+button {
   background-color: #000 !important;
   color: #b8a357 !important;
   border-radius: 25px;
@@ -93,6 +88,47 @@ button{
 .add_pericia {
   background-color: #ddc056 !important;
   color: #fff !important;
-
 }
 
+.sidebar-nav ul li a {
+  font-size: 26px;
+  text-decoration: none;
+  display: block;
+  padding: 6px 10px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: #fff;
+}
+
+.sidebar-nav ul li a:hover {
+  background-color: #8d8d8d;
+  border-radius: 4px;
+  color: #e9c059;
+}
+
+.sidebar-nav .offcanvas {
+  width: 400px;
+  border: none;
+}
+
+.sidebar-nav .offcanvas ul li a span {
+  font-size: 18px;
+  position: relative;
+  top: -4px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.sidebar-nav .offcanvas.show ul li a:hover span {
+  padding-left: 10px;
+}
+
+.sidebar-nav .dropdown-toggle::after {
+  position: relative;
+  top: 3px;
+}
+
+#offcanvasNavbar {
+  background-color: #222;
+}
+/*# sourceMappingURL=style.css.map */
