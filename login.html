@@ -12,6 +12,7 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>
 <link rel="stylesheet" href="login.css">
+
     <title>Entrar</title>
 
 </head>
@@ -27,17 +28,39 @@
       
           <!-- Login Form -->
           <form method="post" action="menu.php">
-            <select name="player" id="player" class="fadeIn second">
+            <div class="corpoLogin">
+            
+            <select name="player" id="player" class="form-control" style="text-align: center;" >
                 <option value="">Selecione uma Ficha</option>
+                <option value="Mestre">Mestre</option>
                 <option value="Andre">Andre</option>
                 <option value="Stark">Stark</option>
                 <option value="Leo">Leo</option>
                 <option value="Lagash">Lagash</option>
             </select>
+
+            <input hidden type="password" name="senha" id="senha" class="form-control" placeholder="SENHA" style="text-align: center;">
             <input type="submit" class="fadeIn fourth" value="Acessar" name="acessar">
           </form>
-      
+        </div>
         </div>
       </div>
 </body>
+
+<script>
+ jQuery('#player').on('change', function(){
+  pl = jQuery('#player').val();
+  console.log(pl);
+  if(pl === 'Mestre'){
+    jQuery('form').prop('action','mestre.php');
+    jQuery('#senha').removeAttr("hidden");
+  }else{
+    jQuery('form').prop('action','menu.php');
+    jQuery('#senha').val("");
+    jQuery('#senha').attr("hidden","hidden");
+  }
+ })
+
+
+</script>
 </html>

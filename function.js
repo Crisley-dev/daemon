@@ -34,6 +34,11 @@ jQuery('label,a').on('click',function(){
             jQuery('.aprimoramentos').show();
             jQuery('.bio,.atrib_info,.pericias,.combate,.equipamentos,.magia').hide();
             break;
+        case 'Jogadores':
+            jQuery(".jogador").show();
+            break;
+        case 'Sair':
+            window.location.replace("logout.php");
     }
 })
 
@@ -131,6 +136,12 @@ jQuery("#btn-sub-apri").click(function(){
 
 
 salvaDados();
+
+//Cria ficha nova e apaga a antiga
+
+jQuery('#nova_ficha').click(function(){
+console.log(jQuery(this).attr('name'));
+})
 
 /* -------------------------------------------------------------------------- */
 /*                                   FUNÇÕES                                  */

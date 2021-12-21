@@ -2,8 +2,6 @@
 
 require_once "manage.php";
 
-
-
 ?>
 
 <head>
@@ -48,7 +46,7 @@ require_once "manage.php";
                     </div>
                     <div class="offcanvas-body" >
                         
-                        <p style="color:#fff"> Personagem: <?php echo strtoupper($data->pj_name); ?></p>
+                        <p style="color:#fff"> Personagem: <?php if (isset($data)) echo strtoupper($data->pj_name); else echo ""; ?></p>
                         <hr style="color:#fff">
                         <ul class="navbar-nav">
                             <li><a href="#"><i class="ra ra-quill-ink"></i> <span class="item-text">Biografia</span></a>
@@ -61,8 +59,9 @@ require_once "manage.php";
                             <li><a href="#"><i class="ra ra-vest"></i> <span class="item-text">Equipamentos</span></a>
                             </li>
                             <li><a href="#"><i class="ra ra-doubled"></i> <span class="item-text">Magia</span></a></li>
-                            <li><a href="#"><i class="ra ra-muscle-up"></i> <span
-                                        class="item-text">Aprimoramentos</span></a></li>
+                            <li><a href="#"><i class="ra ra-muscle-up"></i> <span class="item-text">Aprimoramentos</span></a></li>
+                            <li><a href="#"><i class="bi bi-box-arrow-in-left"></i> <span class="item-text">Sair</span></a></li>
+
                         </ul>
                     </div>
                 </div>

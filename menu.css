@@ -94,6 +94,10 @@ body{
     color: #fff !important;
   
   }
+
+  .card-text{
+    border-bottom:solid 1px;
+  }
 .sidebar-nav ul li a {
     font-size: 26px;
     text-decoration: none;
@@ -132,4 +136,14 @@ body{
 }
 .container{
     max-width: 100% !important;
+}
+#novo_player{
+  background-color:rgb(233, 192, 89) !important ;
+  color: #000 !important;
+  font-size: 18px;
+}
+
+#nova_ficha{
+  background-color: #8a1518 !important;
+  color: #fff !important;
 }
