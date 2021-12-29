@@ -64,7 +64,7 @@ if (!empty($dado)){
                         <hr style="color:#fff">
                         <ul class="navbar-nav">
                             <li class="active"><a href="#"><i class="ra ra-quill-ink "></i> <span class="item-text">Jogadores</span></a></li>
-                            <li><a href="#"><i class="bi bi-box-arrow-in-left"></i> <span class="item-text">Sair</span></a></li>
+                            <li><a href="logout.php"><i class="bi bi-box-arrow-in-left"></i> <span class="item-text">Sair</span></a></li>
 
                         </ul>
                     </div>

@@ -57,12 +57,12 @@ body{
     font-weight: bold;
     
   }
-  input{
+  input, select{
     border-color: black !important;
     border-radius: 20px !important;
   }
 
-  input[type='number'], select{
+  input, input[type='number'], select{
       text-align: center !important;
   }
 

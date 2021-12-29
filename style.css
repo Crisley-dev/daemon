@@ -60,6 +60,7 @@ input {
 input {
   border-color: black;
   border-radius: 20px !important;
+  text-align: center !important;
 }
 
 .faL {

@@ -21,6 +21,7 @@ require_once "manage.php";
 
     <script type="text/javascript" src="function.js"></script>
 </head>
+<title>FICHA <?php echo strtoupper($player); ?></title>
 
 <div class="card corpo">
 
@@ -49,18 +50,18 @@ require_once "manage.php";
                         <p style="color:#fff"> Personagem: <?php if (isset($data)) echo strtoupper($data->pj_name); else echo ""; ?></p>
                         <hr style="color:#fff">
                         <ul class="navbar-nav">
-                            <li><a href="#"><i class="ra ra-quill-ink"></i> <span class="item-text">Biografia</span></a>
+                            <li data-bs-dismiss="offcanvas"><a href="#"><i class="ra ra-quill-ink"></i> <span class="item-text">Biografia</span></a>
                             </li>
-                            <li><a href="#"><i class="ra ra-player"></i> <span class="item-text">Info & Atributos</span></a></li>
-                            <li><a href="#"><i class="ra ra-trophy"></i> <span class="item-text">Pericias</span></a>
+                            <li data-bs-dismiss="offcanvas"><a href="#"><i class="ra ra-player"></i> <span class="item-text">Info & Atributos</span></a></li>
+                            <li data-bs-dismiss="offcanvas"><a href="#"><i class="ra ra-trophy"></i> <span class="item-text">Pericias</span></a>
                             </li>
-                            <li><a href="#"><i class="ra ra-crossed-swords"></i><span
+                            <li data-bs-dismiss="offcanvas"><a href="#"><i class="ra ra-crossed-swords"></i><span
                                         class="item-text">Combate</span></a></li>
-                            <li><a href="#"><i class="ra ra-vest"></i> <span class="item-text">Equipamentos</span></a>
+                            <li data-bs-dismiss="offcanvas"><a href="#"><i class="ra ra-vest"></i> <span class="item-text">Equipamentos</span></a>
                             </li>
-                            <li><a href="#"><i class="ra ra-doubled"></i> <span class="item-text">Magia</span></a></li>
-                            <li><a href="#"><i class="ra ra-muscle-up"></i> <span class="item-text">Aprimoramentos</span></a></li>
-                            <li><a href="#"><i class="bi bi-box-arrow-in-left"></i> <span class="item-text">Sair</span></a></li>
+                            <li data-bs-dismiss="offcanvas"><a href="#"><i class="ra ra-doubled"></i> <span class="item-text">Magia</span></a></li>
+                            <li data-bs-dismiss="offcanvas"><a href="#"><i class="ra ra-muscle-up"></i> <span class="item-text">Aprimoramentos</span></a></li>
+                            <li data-bs-dismiss="offcanvas"><a href="#"><i class="bi bi-box-arrow-in-left"></i> <span class="item-text">Sair</span></a></li>
 
                         </ul>
                     </div>
@@ -84,7 +85,7 @@ require_once "manage.php";
 
                 <div class="row" >
                    <div class="col col-sm-2"></div>
-                    <div class="col col-sm-4">
+                    <div class="col col-sm-3">
                         <input type="text" class="form-control" name="pj_name"
                             value="<?php if(empty($data->pj_name)){    echo '0';}else {    echo $data->pj_name;}?>"><label
                             class="pj_info" for="pj_name">NOME</label>
@@ -96,7 +97,7 @@ require_once "manage.php";
                             class="pj_info" for="pj_sex">SEXO</label>
 
                     </div>
-                    <div class="col col-sm-4">
+                    <div class="col col-sm-3">
                         <input type="text" class="form-control" name="pj_race"
                             value="<?php if(empty($data->pj_race)){    echo '0';}else {    echo $data->pj_race;}?>"><label
                             class="pj_info" for="pj_race">RAÇA</label>
@@ -107,7 +108,10 @@ require_once "manage.php";
                             value="<?php if(empty($data->pj_exp)){    echo '0';}else {    echo $data->pj_exp;}?>"><label
                             class="pj_info" for="pj_exp">EXPERIENCIA</label>
                     </div>
-                    <div class="col col-sm-2"></div>
+                    <div class="col col-sm-3" ><input type="text" class="form-control" name="pj_ip"
+                            value="<?php if(empty($data->pj_ip)){    echo '0';}else {    echo $data->pj_ip;}?>"><label
+                            class="pj_info" for="pj_ip">IP</label></div>
+                    <div class="col-sm-1"></div>
 
                 </div>
 
@@ -305,7 +309,7 @@ require_once "manage.php";
 
                 <h3 style="padding:8px; background-color:black;"></h3>
                 <div class="container">
-                    <div class="row">
+                    <div class="row text-center">
                         <div class="col atributos">
                         </div>
                         <div class="col atributos">
@@ -402,7 +406,7 @@ require_once "manage.php";
                 </div>
                 <div class="row">
                     <textarea name="biografia" id="pj_bio" class="form-control linhas" cols="60" rows="10"
-                        style="width: 65rem; height: 40rem"> <?php if(empty($data->biografia)){    echo '';}else {    echo $data->biografia;}?></textarea>
+                        style="width: 65rem; height: 40rem"><?php if(empty($data->biografia)){    echo '';}else {    echo $data->biografia;}?></textarea>
                 </div>
             </div>
         </div>
@@ -412,13 +416,13 @@ require_once "manage.php";
         <div class="pericias">
             <div class="" id="atributos-tag">
                 <h4>PERICIAS <buttom class='btn add_pericia' id="btn-add-pericia" style="float:right; margin-left:12px">
-                        ADD</buttom>
-                    <buttom class='btn add_pericia' id="btn-sub-pericia" style="float:right">REMOVE</buttom>
+                <i class="fas fa-plus"></i></buttom>
+                    <buttom class='btn add_pericia' id="btn-sub-pericia" style="float:right"><i><i class="fas fa-minus"></i></i></buttom>
                 </h4>
             </div>
 
-            <div class="container">
-                <div class="row" style="text-align:center !important;">>
+            <div class="container p-3">
+                <div class="row" style="text-align:center !important;">
                     <div class="col div_for atributos"><label for="">Nome</label></div>
                     <div class="col div_for atributos"><label for="">Base</label></div>
                     <div class="col div_for atributos"><label for="">Gasto%</label></div>
@@ -482,8 +486,8 @@ require_once "manage.php";
         <!-- ABA COMBATE -->
         <div class="combate">
             <h4 id="atributos-tag">COMBATE</h4>
-            <div class="contaier">
-                <div class="row" style="text-align:center !important;">>
+            <div class="contaier p-5">
+                <div class="row" style="text-align:center !important;">
                     <div class="col atributos"><label for="">Nome</label></div>
                     <div class="col atributos"><label for="">Tipo</label></div>
                     <div class="col atributos"><label for="">Base</label></div>
@@ -709,8 +713,8 @@ require_once "manage.php";
         <div class="equipamentos">
             <div class="" id="atributos-tag">
                 <h4>EQUIPAMENTOS <buttom class='btn add_pericia' id="btn-add-equip"
-                        style="float:right; margin-left:12px">ADD</buttom>
-                    <buttom class='btn add_pericia' id="btn-sub-equip" style="float:right">REMOVE</buttom>
+                        style="float:right; margin-left:12px"><i class="fas fa-plus"></i></buttom>
+                    <buttom class='btn add_pericia' id="btn-sub-equip" style="float:right"><i class="fas fa-minus"></i></buttom>
                 </h4>
             </div>
 
@@ -718,9 +722,10 @@ require_once "manage.php";
             <div class="container">
                 <div class="row" style="text-align:center !important;">>
                     <div class="col atributos"><label for="">Nome</label></div>
+                    <div class="col atributos"><label for="">Tipo</label></div>
                     <div class="col atributos"><label for="">Quant.</label></div>
                     <div class="col atributos"><label for="">Peso</label></div>
-                    <div class="col atributos"><label for="">Durabilidade</label></div>
+                    <div class="col atributos"><label for="">PV's</label></div>
                 </div>
 
                 <div class="all_equips">
@@ -731,6 +736,7 @@ require_once "manage.php";
                                 $k = 1;
                                 for($i=1;$i<=$numeq;$i++){
                                 $equip = 'equip'.$k;
+                                $eqtipo = 'eqtipo'.$k;
                                 $quant = 'quant'.$k;
                                 $peso = 'peso'.$k;
                                 $dura = 'dura'.$k;
@@ -742,6 +748,20 @@ require_once "manage.php";
                         <div class="col div_for"><input type="text" name="equip<?php echo $k; ?>" class="form-control"
                                 value="<?php if(empty($data->$equip)){    echo '';}else {    echo $data->$equip;}?>">
                         </div>
+
+
+                        <div class="col div_for ">
+                            <select name="eqtipo<?php echo $k; ?>" id="eqtipo<?php echo $k; ?>"
+                                class="form-control" style="text-transform: uppercase;">
+
+                                <option selected hidden
+                                    value="<?php if(empty($data->$eqtipo)){    echo '';}else {    echo $data->$eqtipo;}?>">
+                                    <?php if(empty($data->$eqtipo)){    echo '';}else {    echo $data->$eqtipo;}?>
+                                <option value="EQUIPAMENTO">EQUIPAMENTO</option>
+                                <option value="ARMA">ARMA</option>
+                                <option value="ARMADIRA">ARMADURA</option>n>
+                            </select></div>
+
                         <div class="col div_for"><input type="number" name="quant<?php echo $k; ?>" class="form-control"
                                 value="<?php if(empty($data->$quant)){    echo '0';}else {    echo $data->$quant;}?>">
                         </div>
@@ -764,23 +784,23 @@ require_once "manage.php";
             <div class="container">
                 <div class="row" >
                     <div class="col col-sm-2" style="text-align:center !important;">
-                        <label for="">Fogo</label> <input type="number" class="form-control" name="cam_fogo"
+                        <label for="">Fogo <i class="ra ra-flame-symbol"></i></label> <input type="number" class="form-control" name="cam_fogo"
                             value="<?php if(empty($data->cam_fogo)){    echo '0';}else {    echo $data->cam_fogo;}?>">
-                        <label for="">Ar</label> <input type="number" class="form-control" name="cam_ar"
+                        <label for="">Ar <i class="ra ra-incense"></i></label> <input type="number" class="form-control" name="cam_ar"
                             value="<?php if(empty($data->cam_ar)){    echo '0';}else {    echo $data->cam_ar;}?>">
-                        <label for="">Luz</label> <input type="number" class="form-control" name="cam_luz"
+                        <label for="">Luz <i class="ra ra-sunbeams"></i></label> <input type="number" class="form-control" name="cam_luz"
                             value="<?php if(empty($data->cam_luz)){    echo '0';}else {    echo $data->cam_luz;}?>">
-                        <label for="">Plantas</label> <input type="number" class="form-control" name="cam_plantas"
+                        <label for="">Plantas <i class="ra ra-leaf"></i></label> <input type="number" class="form-control" name="cam_plantas"
                             value="<?php if(empty($data->cam_plantas)){    echo '0';}else {    echo $data->cam_plantas;}?>">
-                        <label for="">Humanos</label> <input type="number" class="form-control" name="cam_humanos"
+                        <label for="">Humanos <i class="ra ra-double-team"></i></label> <input type="number" class="form-control" name="cam_humanos"
                             value="<?php if(empty($data->cam_humanos)){    echo '0';}else {    echo $data->cam_humanos;}?>">
-                        <label for="">Metamagia</label> <input type="number" class="form-control" name="cam_metamagia"
+                        <label for="">Metamagia <i class="ra  ra-crystal-ball"></i></label> <input type="number" class="form-control" name="cam_metamagia"
                             value="<?php if(empty($data->cam_metamagia)){    echo '0';}else {    echo $data->cam_metamagia;}?>">
                     </div>
 
                     <div class="col col-sm-3"></div>
 
-                    <div class="col col-sm-2 atributos" style="text-align:center !important;">>
+                    <div class="col col-sm-2 atributos" style="text-align:center !important;">
 
                         <label for="">Entender</label><input type="number" class="form-control faL"
                             name="forma_entender"
@@ -796,18 +816,18 @@ require_once "manage.php";
                     <div class="col col-sm-3"></div>
 
 
-                    <div class="col col-sm-2 atributos" style="text-align:center !important;">>
-                        <label for="">Agua</label> <input type="number" class="form-control" name="cam_agua"
+                    <div class="col col-sm-2 atributos" style="text-align:center !important;">
+                        <label for="">Agua <i class="ra ra-water-drop"></i></label> <input type="number" class="form-control" name="cam_agua"
                             value="<?php if(empty($data->cam_agua)){    echo '0';}else {    echo $data->cam_agua;}?>">
-                        <label for="">Terra</label> <input type="number" class="form-control" name="cam_terra"
+                        <label for="">Terra <i class="ra ra-pine-tree"></i></label> <input type="number" class="form-control" name="cam_terra"
                             value="<?php if(empty($data->cam_terra)){    echo '0';}else {    echo $data->cam_terra;}?>">
-                        <label for="">Trevas</label> <input type="number" class="form-control" name="cam_trevas"
+                        <label for="">Trevas <i class="ra ra-bleeding-eye"></i></label> <input type="number" class="form-control" name="cam_trevas"
                             value="<?php if(empty($data->cam_trevas)){    echo '0';}else {    echo $data->cam_trevas;}?>">
-                        <label for="">Animais</label> <input type="number" class="form-control" name="cam_animais"
+                        <label for="">Animais <i class="ra ra-wolf-howl"></i></label> <input type="number" class="form-control" name="cam_animais"
                             value="<?php if(empty($data->cam_animais)){    echo '0';}else {    echo $data->cam_animais;}?>">
-                        <label for="">Spiritum</label> <input type="number" class="form-control" name="cam_spiritum"
+                        <label for="">Spiritum <i class="ra  ra-player-teleport"></i></label> <input type="number" class="form-control" name="cam_spiritum"
                             value="<?php if(empty($data->cam_spiritum)){    echo '0';}else {    echo $data->cam_spiritum;}?>">
-                        <label for="">Arkanun</label> <input type="number" class="form-control" name="cam_arkanun"
+                        <label for="">Arkanun <i class="ra ra-burning-book"></i></label> <input type="number" class="form-control" name="cam_arkanun"
                             value="<?php if(empty($data->cam_arkanun)){    echo '0';}else {    echo $data->cam_arkanun;}?>">
 
                     </div>
@@ -819,7 +839,7 @@ require_once "manage.php";
                             value="<?php if(empty($data->mg_nome1)){    echo '';}else {    echo $data->mg_nome1;}?>">
                         <label for="">Formas e caminhos</label><input type="text" name="mg_forma_cam1"
                             class="form-control"
-                            value="<?php if(empty($data->mg_forma_cam1)){    echo '0';}else {    echo $data->mg_forma_cam1;}?>">
+                            value="<?php if(empty($data->mg_forma_cam1)){    echo '';}else {    echo $data->mg_forma_cam1;}?>">
                         <label for="">Pontos de Magia</label> <input type="number" name="mg_pts1" class="form-control"
                             value="<?php if(empty($data->mg_pts1)){    echo '0';}else {    echo $data->mg_pts1;}?>">
                         <label for="">Descrição</label><textarea name="mg_desc1" class="linhas form-control" cols="30"
@@ -830,7 +850,7 @@ require_once "manage.php";
                             value="<?php if(empty($data->mg_nome2)){    echo '';}else {    echo $data->mg_nome2;}?>">
                         <label for="">Formas e caminhos</label><input type="text" name="mg_forma_cam2"
                             class="form-control"
-                            value="<?php if(empty($data->mg_forma_cam2)){    echo '0';}else {    echo $data->mg_forma_cam2;}?>">
+                            value="<?php if(empty($data->mg_forma_cam2)){    echo '';}else {    echo $data->mg_forma_cam2;}?>">
                         <label for="">Pontos de Magia</label> <input type="number" name="mg_pts2" class="form-control"
                             value="<?php if(empty($data->mg_pts2)){    echo '0';}else {    echo $data->mg_pts2;}?>">
                         <label for="">Descrição</label><textarea name="mg_desc2" class="linhas form-control" cols="30"
@@ -846,7 +866,7 @@ require_once "manage.php";
                             value="<?php if(empty($data->mg_nome3)){    echo '';}else {    echo $data->mg_nome3;}?>">
                         <label for="">Formas e caminhos</label><input type="text" name="mg_forma_cam3"
                             class="form-control"
-                            value="<?php if(empty($data->mg_forma_cam3)){    echo '0';}else {    echo $data->mg_forma_cam3;}?>">
+                            value="<?php if(empty($data->mg_forma_cam3)){    echo '';}else {    echo $data->mg_forma_cam3;}?>">
                         <label for="">Pontos de Magia</label> <input type="number" name="mg_pts3" class="form-control"
                             value="<?php if(empty($data->mg_pts3)){    echo '0';}else {    echo $data->mg_pts3;}?>">
                         <label for="">Descrição</label><textarea name="mg_desc3" class="linhas form-control" cols="30"
@@ -857,7 +877,7 @@ require_once "manage.php";
                             value="<?php if(empty($data->mg_nome4)){    echo '';}else {    echo $data->mg_nome4;}?>">
                         <label for="">Formas e caminhos</label><input type="text" name="mg_forma_cam4"
                             class="form-control"
-                            value="<?php if(empty($data->mg_forma_cam4)){    echo '0';}else {    echo $data->mg_forma_cam4;}?>">
+                            value="<?php if(empty($data->mg_forma_cam4)){    echo '';}else {    echo $data->mg_forma_cam4;}?>">
                         <label for="">Pontos de Magia</label> <input type="number" name="mg_pts4" class="form-control"
                             value="<?php if(empty($data->mg_pts4)){    echo '0';}else {    echo $data->mg_pts4;}?>">
                         <label for="">Descrição</label><textarea name="mg_desc4" class="linhas form-control" cols="30"
@@ -872,7 +892,7 @@ require_once "manage.php";
                             value="<?php if(empty($data->mg_nome5)){    echo '';}else {    echo $data->mg_nome5;}?>">
                         <label for="">Formas e caminhos</label><input type="text" name="mg_forma_cam5"
                             class="form-control"
-                            value="<?php if(empty($data->mg_forma_cam5)){    echo '0';}else {    echo $data->mg_forma_cam5;}?>">
+                            value="<?php if(empty($data->mg_forma_cam5)){    echo '';}else {    echo $data->mg_forma_cam5;}?>">
                         <label for="">Pontos de Magia</label> <input type="number" name="mg_pts5" class="form-control"
                             value="<?php if(empty($data->mg_pts5)){    echo '0';}else {    echo $data->mg_pts5;}?>">
                         <label for="">Descrição</label><textarea name="mg_desc5" class="linhas form-control" cols="30"
@@ -883,7 +903,7 @@ require_once "manage.php";
                             value="<?php if(empty($data->mg_nome6)){    echo '';}else {    echo $data->mg_nome6;}?>">
                         <label for="">Formas e caminhos</label><input type="text" name="mg_forma_cam6"
                             class="form-control"
-                            value="<?php if(empty($data->mg_forma_cam6)){    echo '0';}else {    echo $data->mg_forma_cam6;}?>">
+                            value="<?php if(empty($data->mg_forma_cam6)){    echo '';}else {    echo $data->mg_forma_cam6;}?>">
                         <label for="">Pontos de Magia</label> <input type="number" name="mg_pts6" class="form-control"
                             value="<?php if(empty($data->mg_pts6)){    echo '0';}else {    echo $data->mg_pts6;}?>">
                         <label for="">Descrição</label><textarea name="mg_desc6" class="linhas form-control" cols="30"
@@ -898,18 +918,18 @@ require_once "manage.php";
                             value="<?php if(empty($data->mg_nome7)){    echo '';}else {    echo $data->mg_nome7;}?>">
                         <label for="">Formas e caminhos</label><input type="text" name="mg_forma_cam7"
                             class="form-control"
-                            value="<?php if(empty($data->mg_forma_cam7)){    echo '0';}else {    echo $data->mg_forma_cam7;}?>">
+                            value="<?php if(empty($data->mg_forma_cam7)){    echo '';}else {    echo $data->mg_forma_cam7;}?>">
                         <label for="">Pontos de Magia</label> <input type="number" name="mg_pts7" class="form-control"
                             value="<?php if(empty($data->mg_pts7)){    echo '0';}else {    echo $data->mg_pts7;}?>">
                         <label for="">Descrição</label><textarea name="mg_desc7" class="linhas form-control" cols="30"
-                            rows="10"><<?php if(empty($data->mg_desc7)){    echo '';}else {    echo $data->mg_desc7;}?></textarea>
+                            rows="10"><?php if(empty($data->mg_desc7)){    echo '';}else {    echo $data->mg_desc7;}?></textarea>
                     </div>
                     <div class="col col-sm-6 Grimorio-R">
                         <label for="">Nome</label><input type="text" name="mg_nome8" class="form-control"
                             value="<?php if(empty($data->mg_nome8)){    echo '';}else {    echo $data->mg_nome8;}?>">
                         <label for="">Formas e caminhos</label><input type="text" name="mg_forma_cam8"
                             class="form-control"
-                            value="<?php if(empty($data->mg_forma_cam8)){    echo '0';}else {    echo $data->mg_forma_cam8;}?>">
+                            value="<?php if(empty($data->mg_forma_cam8)){    echo '';}else {    echo $data->mg_forma_cam8;}?>">
                         <label for="">Pontos de Magia</label> <input type="number" name="mg_pts8" class="form-control"
                             value="<?php if(empty($data->mg_pts8)){    echo '0';}else {    echo $data->mg_pts8;}?>">
                         <label for="">Descrição</label><textarea name="mg_desc8" class="linhas form-control" cols="30"
@@ -925,11 +945,11 @@ require_once "manage.php";
         <div class="aprimoramentos">
             <div class="" id="atributos-tag">
                 <h4>APRIMORAMENTOS <buttom class='btn add_pericia' id="btn-add-apri"
-                        style="float:right; margin-left:12px">ADD</buttom>
-                    <buttom class='btn add_pericia' id="btn-sub-apri" style="float:right">REMOVE</buttom>
+                        style="float:right; margin-left:12px"><i class="fas fa-plus"></i></buttom>
+                    <buttom class='btn add_pericia' id="btn-sub-apri" style="float:right"><i class="fas fa-minus"></i></buttom>
                 </h4>
             </div>
-            <div class="container">
+            <div class="container p-3">
                 <div class="row" style="text-align:center !important;">
                     <div class="col col-sm-5 atributos"><label for="">Nome</label></div>
                     <div class="col col-sm-2 atributos"><label for="">Custo</label></div>

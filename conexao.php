@@ -1,10 +1,11 @@
 <?php
 /*
     $host = 'localhost';
-    $dbname = 'id17204719_daemon';
-    $username = 'id17204719_starkkz';
-    $password = 'w3XID+q+!d@vW3\?';
+    $dbname = 'id18191542_daemon';
+    $username = 'id18191542_starkkz';
+    $password = 'w/zO~P~h-H{yR4z1';
 */
+
     $host = 'localhost';
     $dbname = 'daemon';
     $username = 'root';
